@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+    font-family: 'Arial', sans-serif;
+    background: url("gradient-background-5120x2880-11027.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: backgroundAnimation 30s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+   ;
+}
+
+.login-container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px blue;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1.5s ease-in-out;
+    margin: 10vh auto;
+    background-color: black;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-container h2 {
+    margin-bottom: 1.5rem;
+    color: blueviolet;
+    text-shadow: 0 0 5px blueviolet, 0 0 10px blueviolet;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: blueviolet;
+    text-shadow: 0 0 5px blueviolet, 0 0 10px blueviolet;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.5);
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.input-group input:focus {
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(0, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    box-shadow: 0 0 10px blueviolet, 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+button:hover {
+    background: rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.7);
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 1.5rem;
+    }
+
+    .input-group input, button {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="" onsubmit="return validationform()">
+            <div class="input-group">
+                <label for="fname">Firstname</label>
+                <input type="text" id="fname" name="fname">
+            </div>
+            <div class="input-group">
+                <label for="lname">Lastname</label>
+                <input type="text" id="lname" name="lname">
+            </div>
+            <div class="input-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address">
+            </div>
+            <div class="input-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city">
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone number</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <br><br>
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    <script>
+        function validationform(){
+            var Firstname=document.getElementById("fname").value;
+            var Lastname=document.getElementById("lname").value;
+            var City=document.getElementById("city").value;
+            var address=document.getElementById("address").value;
+            var phone=document.getElementById("phone").value;
+            if(Firstname=="" || Firstname==null ||Lastname==null ||Lastname=="" || City==null ||Cityname=="" || address==null ||phone=="" || phone==null){
+                alert("Please fill all the fields");
+                return false;
+                }
+            else if(Firstname!="" || Firstname!=null ||Lastname!=null ||Lastname!="" || City!=null ||Cityname!="" || address!=null ||phone!="" || phone!=null){
+                alert("submitted sucessfully");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
